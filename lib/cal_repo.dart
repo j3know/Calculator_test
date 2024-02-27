@@ -1,22 +1,39 @@
 // lib/calculator.dart
 
+import 'dart:math';
+
 class Calculator {
   double add(double a, double b) {
-    throw UnimplementedError();
+    return a + b;
   }
 
   double subtract(double a, double b) {
-    throw UnimplementedError();
+    return a - b;
   }
 
   double multiply(double a, double b) {
-    throw UnimplementedError();
+    return a * b;
   }
 
   double divide(double a, double b) {
     if (b == 0) {
       throw ArgumentError('Cannot divide by zero');
     }
-    throw UnimplementedError();
+    return a / b;
+  }
+
+  double pow(double base, double exponent) {
+    return pow(base, exponent);
+  }
+
+  double sqrt(double value) {
+    if (value < 0) {
+      throw ArgumentError('Cannot calculate square root of a negative number');
+    }
+    return sqrt(value);
+  }
+
+  double addThreeNumbers(double a, double b, double c) {
+    return add(add(a, b), c);
   }
 }
