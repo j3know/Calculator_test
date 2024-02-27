@@ -37,19 +37,38 @@ void main() {
 
   group('Subtraction', () {
     test(
-        'Given calculator Obj, WHEN Subtracting two numbers, Then result is a-b',
+        'Given calculator Obj, When Subtracting two numbers and subtrahend is lesser than minuend, Then a-b',
         () {
       expect(calculator.subtract(5, 3), 2);
     });
     test(
-        'Given calculator Obj, When Subtracting a negative number from a positive number, Then result is a-b',
+        'Given calculator Obj, When Subtracting two numbers and subtrahend is greater than minuend, Then a-b',
+        () {
+      expect(calculator.subtract(3, 5), -2);
+    });
+    test(
+        'Given calculator Obj, When Subtracting a negative number from a positive number, Then a-b',
         () {
       expect(calculator.subtract(5, -3), 8);
     });
     test(
-        'Given calculator Obj, When Subtracting two large numbers, Then result is a-b',
+        'Given calculator Obj, When  Subtracting a positive number from a negative number, Then a-b',
+        () {
+      expect(calculator.subtract(-5, 3), -8);
+    });
+    test('Given calculator Obj, When  Subtracting two large numbers, Then a-b',
         () {
       expect(calculator.subtract(1000000000000000, 1), 999999999999999);
+    });
+    test(
+        'Given calculator Obj, When  Subtracting two negative numbers, subtrahend is lesser than minuend, Then a-b',
+        () {
+      expect(calculator.subtract(-5, -3), -2);
+    });
+    test(
+        'Given calculator Obj, When  Subtracting two negative numbers, subtrahend is greater than minuend, Then a-b',
+        () {
+      expect(calculator.subtract(-3, -5), 2);
     });
   });
 
