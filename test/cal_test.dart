@@ -64,10 +64,37 @@ void main() {
         () {
       expect(calculator.multiply(-2, 3), -6);
     });
+    test(
+        'Given calculator class, when 2 positive numbers are multiplied, then output should be positive',
+        () {
+      expect(calculator.multiply(2, 3), 6);
+      expect(calculator.multiply(3.0, 2.0), 6.0);
+    });
+    test(
+        'Given calculator class, when 2 negative numbers are multiplied, then output should be positive',
+        () {
+      expect(calculator.multiply(-2, -3), 6);
+      expect(calculator.multiply(-3.0, -2.0), 6.0);
+    });
+    test(
+        'Given calculator class, when 1 positive and 1 negative number are multiplied, then output should be negative',
+        () {
+      expect(calculator.multiply(-2, 3), -6);
+      expect(calculator.multiply(3.0, -2.0), -6.0);
+    });
+    test(
+        'Given calculator class, when any numbers are mulitplied by 0 , then output should be 0',
+        () {
+      expect(calculator.multiply(-2, 0), 0);
+      expect(calculator.multiply(0, -2), 0);
+      expect(calculator.multiply(0, 0), 0);
+    });
   });
 
   group('Division', () {
-    test('Dividing two numbers', () {
+    test(
+        'Given calculator obj, When given two numbers, Then return should be a/b',
+        () {
       expect(calculator.divide(6, 2), 3);
     });
     test(
@@ -94,4 +121,6 @@ void main() {
       expect(calculator.divide(5, 3), closeTo(1.67, 0.01));
     });
   });
+
+  tearDownAll(() => calculator = Calculator());
 }
