@@ -8,40 +8,60 @@ void main() {
   setUpAll(() => calculator = Calculator());
 
   group('Addition', () {
-    test('Adding two numbers', () {
+    test(
+        'Given  calcualtor obj, when giving two Adding two numbers, then result is a+b',
+        () {
       expect(calculator.add(2, 3), 5);
     });
-    test('Adding two negative numbers', () {
+    test(
+        'Given calculator Obj, When Adding two negative numbers, then result is a+b',
+        () {
       expect(calculator.add(-2, -3), -5);
     });
-    test('Adding three numbers', () {
+    test(
+        'Given calculator Obj, When Adding three numbers, then result is a+b+c',
+        () {
       expect(calculator.addThreeNumbers(2, 3, 4), 9);
     });
-    test('Adding two large numbers', () {
+    test(
+        'Given calculator Obj, When Adding two large numbers , then result is a+b',
+        () {
       expect(calculator.add(999999999999999, 1), 1000000000000000);
     });
-    test('Adding two decimal numbers', () {
+    test(
+        'Given calculator Obj, When Adding two decimal numbers, then result is a+b',
+        () {
       expect(calculator.add(2.5, 3.5), 6);
     });
   });
 
   group('Subtraction', () {
-    test('Subtracting two numbers', () {
+    test(
+        'Given calculator Obj, WHEN Subtracting two numbers, Then result is a-b',
+        () {
       expect(calculator.subtract(5, 3), 2);
     });
-    test('Subtracting a negative number from a positive number', () {
+    test(
+        'Given calculator Obj, When Subtracting a negative number from a positive number, Then result is a-b',
+        () {
       expect(calculator.subtract(5, -3), 8);
     });
-    test('Subtracting two large numbers', () {
+    test(
+        'Given calculator Obj, When Subtracting two large numbers, Then result is a-b',
+        () {
       expect(calculator.subtract(1000000000000000, 1), 999999999999999);
     });
   });
 
   group('Multiplication', () {
-    test('Multiplying two numbers', () {
+    test(
+        'Given calculator Obj, When Multiplying two numbers, Then result is a*b',
+        () {
       expect(calculator.multiply(2, 3), 6);
     });
-    test('Multiplying a negative number by a positive number', () {
+    test(
+        'Given calculator Obj,When Multiplying a negative number by a positive number, Then result is the negative a*b',
+        () {
       expect(calculator.multiply(-2, 3), -6);
     });
   });
@@ -60,13 +80,17 @@ void main() {
         () {
       expect(calculator.divide(5.0, 5), 1);
     });
-    test('Dividing a positive number by a negative number', () {
+    test(
+        'Given calculator Obj,  When Dividing a positive number by a negative number, Then result is a negative number',
+        () {
       expect(calculator.divide(6, -2), -3);
     });
     test('Given calculator obj, When Dividing by 0, Then throws error', () {
       expect(() => calculator.divide(5, 0), throwsArgumentError);
     });
-    test('Rounding result when dividing two numbers', () {
+    test(
+        'Given calculator Obj, When Rounding result, Then result is closeTo range',
+        () {
       expect(calculator.divide(5, 3), closeTo(1.67, 0.01));
     });
   });
