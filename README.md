@@ -1,16 +1,11 @@
-# flutter_calculator_test
+Calculator
+Welcome to the Calculator repository! This is a simple calculator program built using Flutter TDD.
 
-A new Flutter project.
+Description
+This calculator program allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Test Features
+Addition
+Subtraction
+Multiplication
+Division
