@@ -46,8 +46,6 @@ void main() {
     });
   });
 
-  // Add more tests based on your calculator's functionalities and edge cases
-
   group('Division', () {
     test('Dividing two numbers', () {
       expect(calculator.divide(6, 2), 3);
@@ -55,12 +53,12 @@ void main() {
     test(
         'Given calculator obj, When given two negative, Then return should be -a/-b',
         () {
-      expect(() => calculator.divide(-5, -5), 1);
+      expect(calculator.divide(-5.0, -5.0), 1);
     });
     test(
         'Given calculator obj, When given two non negative, Then return should be a/b',
         () {
-      expect(() => calculator.divide(5, 5), 1);
+      expect(calculator.divide(5.0, 5), 1);
     });
     test('Dividing a positive number by a negative number', () {
       expect(calculator.divide(6, -2), -3);
